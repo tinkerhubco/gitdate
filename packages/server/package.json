@@ -1,0 +1,84 @@
+{
+  "name": "tinkerhub-boilerplates-api",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && copyfiles -f src/migrations/sqls/*.sql dist/migrations/sqls/",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "watch": "nodemon --watch src/ --ext ts,json --exec 'npm run build && npm start'",
+    "prestart:prod": "rimraf dist && tsc",
+    "start:prod": "node dist/main.js --",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "db:migrate": "npm run build && node build/scripts/db-migrate.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "NODE_ENV=test jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.3.1",
+    "@nestjs/core": "^6.2.0",
+    "@nestjs/platform-express": "^6.2.0",
+    "@nestjs/typeorm": "^6.1.1",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.9.1",
+    "config": "^3.0.1",
+    "date-fns": "^1.30.1",
+    "dotenv": "^6.2.0",
+    "fp-ts": "^1.18.2",
+    "mysql": "^2.17.1",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.2.2",
+    "typeorm": "^0.2.17",
+    "typescript": "^3.5.1",
+    "voca": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.2.0",
+    "@types/chance": "^1.0.4",
+    "@types/config": "0.0.34",
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.7.1",
+    "@types/supertest": "^2.0.5",
+    "@types/voca": "^1.4.0",
+    "chance": "^1.0.18",
+    "commander": "^2.20.0",
+    "copyfiles": "^2.1.1",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "supertest": "^3.1.0",
+    "ts-jest": "^23.1.3",
+    "ts-loader": "^4.4.2",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.5.0",
+    "tslint": "5.11.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src/tests",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
