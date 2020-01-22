@@ -15,7 +15,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "NODE_ENV=test jest --detectOpenHandles"
+    "test:e2e": "NODE_ENV=test jest --detectOpenHandles",
+    "deploy": "now --prod --token $ZEIT_TOKEN"
   },
   "dependencies": {
     "@nestjs/common": "^6.3.1",
