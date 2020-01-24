@@ -12,3 +12,61 @@ yarn-error.log*
 # environment variables
 .env
 .env.*
+
+# OSX
+#
+.DS_Store
+packages/**/.DS_Store
+
+# react-native
+
+# Xcode
+#
+packages/**/build/
+packages/**/*.pbxuser
+packages/**/!default.pbxuser
+packages/**/*.mode1v3
+packages/**/!default.mode1v3
+packages/**/*.mode2v3
+packages/**/!default.mode2v3
+packages/**/*.perspectivev3
+packages/**/!default.perspectivev3
+packages/**/xcuserdata
+packages/**/*.xccheckout
+packages/**/*.moved-aside
+packages/**/DerivedData
+packages/**/*.hmap
+packages/**/*.ipa
+packages/**/*.xcuserstate
+
+# Android/IntelliJ
+#
+packages/**/build/
+packages/**/.idea
+packages/**/.gradle
+packages/**/local.properties
+packages/**/*.iml
+
+
+# BUCK
+packages/**/buck-out/
+packages/**/\.buckd/
+packages/**/*.keystore
+packages/**/!debug.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Bundle artifact
+packages/**/*.jsbundle
+
+# CocoaPods
+packages/**/ios/Pods/
