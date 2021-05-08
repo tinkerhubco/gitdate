@@ -33,7 +33,7 @@
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2",
-    "typeorm": "^0.2.17",
+    "typeorm": "^0.2.25",
     "typescript": "^3.5.1",
     "voca": "^1.4.0"
   },
