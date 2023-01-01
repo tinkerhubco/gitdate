@@ -25,7 +25,7 @@
     "@nestjs/typeorm": "^6.1.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
-    "config": "^3.0.1",
+    "config": "^3.3.8",
     "date-fns": "^1.30.1",
     "dotenv": "^6.2.0",
     "fp-ts": "^1.18.2",
@@ -58,9 +58,9 @@
     "pretty-quick": "^1.11.0",
     "supertest": "^3.1.0",
     "ts-jest": "^23.1.3",
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^9.4.2",
     "ts-node": "^7.0.1",
-    "tsconfig-paths": "^3.5.0",
+    "tsconfig-paths": "^3.10.1",
     "tslint": "5.11.0"
   },
   "jest": {
